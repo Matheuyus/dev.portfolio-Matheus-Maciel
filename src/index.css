@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 5%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 5%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 263 70% 50%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 263 70% 50%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 263 70% 50%;
+
+    --radius: 0.75rem;
+
+    --neon-glow: 0 0 20px hsl(263 70% 50% / 0.5);
+    --neon-glow-strong: 0 0 30px hsl(263 70% 50% / 0.7), 0 0 60px hsl(263 70% 50% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .neon-text {
+    text-shadow: var(--neon-glow);
+  }
+
+  .neon-border {
+    box-shadow: var(--neon-glow);
+  }
+
+  .neon-border-strong {
+    box-shadow: var(--neon-glow-strong);
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-violet-400 bg-clip-text text-transparent;
+  }
+}
